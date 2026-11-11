@@ -1,0 +1,271 @@
+/* Shared showroom finish. Brand artwork and canonical colour values stay original. */
+.showcase-app {
+  --ui-ink: #1a1a1a;
+  --ui-green: #71b32c;
+  --ui-orange: #f26800;
+  --ui-blue: #149be8;
+  --ui-paper: #ffffff;
+  --ui-canvas: #f3f5f4;
+  --ui-shadow: 0 2px 4px #18251c03, 0 12px 36px -14px #18251c17, 0 38px 70px -44px #18251c12;
+  --ui-ease: cubic-bezier(.2,.75,.2,1);
+  color: var(--ui-ink);
+}
+.showcase-app.is-inner {background:var(--ui-canvas)}
+.showcase-app.is-inner .main {max-width:1380px;padding-inline:40px}
+.showcase-app.is-inner .flow-header {
+  height:96px;padding-inline:40px;gap:24px;
+  background:#fffffff0;border-bottom:1px solid #e4e9e4;
+  box-shadow:0 6px 24px -20px #17342125;backdrop-filter:blur(24px);
+}
+.showcase-app.is-inner .header-shield-logo {width:84px;filter:none}
+.showcase-app.is-inner .flow-wordmark {gap:20px}
+.showcase-app.is-inner .flow-wordmark small {
+  display:block;font-size:18px;font-weight:650;letter-spacing:0;
+  padding-left:20px;border-color:#dce2dc;line-height:1.2;color:var(--ui-ink);
+}
+.showcase-app .flow-nav {
+  gap:4px;padding:5px;border:0;background:#edf1ed;
+  box-shadow:inset 0 1px 3px #1b2c2110;backdrop-filter:none;
+}
+.showcase-app .flow-nav>button {
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  min-height:44px;padding:10px 20px;font-size:13px;font-weight:500;
+  color:var(--ui-ink);transition:background 180ms,box-shadow 180ms;
+}
+.showcase-app .flow-nav>button.current {
+  background:#fff;color:var(--ui-ink);box-shadow:0 2px 7px #1d35221a;
+}
+.showcase-app .flow-nav>button:hover {background:#ffffffb0}
+.showcase-app .flow-nav>button.current:hover {background:#fff}
+.showcase-app .flow-menu {border-radius:50%;background:#eef2ed;color:var(--ui-ink)}
+.showcase-app .page-top {height:62px}
+.showcase-app .breadcrumb {font-size:12px;gap:13px;color:var(--ui-ink)}
+.showcase-app .breadcrumb>button {display:flex;gap:8px;align-items:center;min-height:44px;color:var(--ui-ink)}
+.showcase-app .breadcrumb>svg {opacity:.38}
+.showcase-app .breadcrumb>span {font-weight:500}
+.showcase-app button:focus-visible,.showcase-app a:focus-visible {outline:2px solid #528521;outline-offset:4px}
+.showcase-app .footer {padding:24px 8px 32px;border-top:1px solid #dfe5de;margin-top:32px;color:var(--ui-ink)}
+.showcase-app .footer>span {opacity:.65;font-size:11px}
+.showcase-app .footer-shield-logo {width:62px}
+
+/* One panel language, with fine dividers and low, soft elevation. */
+.logo-reference-gallery,.vi-gallery,.ip-gallery {gap:28px}
+.vi-gallery>section {min-width:0}
+.logo-reference-panel,.vi-font-panel,.vi-logo-panel,.ip-reference-panel {
+  padding:28px 36px;border:0;border-radius:28px;background:var(--ui-paper);
+  box-shadow:var(--ui-shadow);
+}
+.logo-reference-heading,.vi-section-heading,.ip-section-heading {
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding-bottom:18px;border-bottom:1px solid #e1e7df;
+}
+.logo-reference-heading h1,.logo-reference-heading h2,.vi-section-heading h2,.ip-section-heading h1,.ip-section-heading h2 {
+  font-size:36px;line-height:1.3;letter-spacing:-.025em;font-weight:650;
+}
+
+/* Logo plates use the asset's own colours, with a restrained paper stage. */
+.logo-standard-grid {gap:28px;padding-top:22px}
+.logo-standard-preview,.logo-company-preview {
+  border:0;background:linear-gradient(150deg,#f9faf8,#f4f6f2);border-radius:18px;
+  box-shadow:inset 0 1px 0 #fff;
+}
+.logo-standard-preview {height:174px}
+.logo-standard-preview .logo-reference-image {max-height:142px;width:230px}
+.logo-reference-preview[aria-pressed="true"] {border-color:transparent}
+.logo-standard-preview[aria-pressed="true"],.logo-company-preview[aria-pressed="true"] {
+  background:#f0f6e9;box-shadow:inset 0 0 0 1px #e5eddd,0 5px 18px #3651210a;
+}
+.logo-priority-row {padding-inline:36px;gap:28px}
+.logo-priority-note {padding-top:21px;font-size:17px;font-weight:500}
+.logo-color-grid {gap:28px;padding-top:24px}
+.logo-color-preview {border:0;border-radius:16px;box-shadow:0 6px 14px -7px #17211826}
+.logo-color-preview[aria-pressed="true"] {box-shadow:0 8px 24px -8px #17211840}
+.logo-color-figure figcaption {font-size:clamp(14px,1.25vw,17px);font-weight:500;line-height:1.65;margin-top:16px}
+.logo-company-grid {gap:28px;padding-top:24px}
+.logo-company-preview {height:122px}
+.logo-company-preview .logo-reference-image {width:78%;max-width:248px}
+
+/* Colour tokens and the full ten-weight specimen share an exact grid. */
+.vi-color-board {
+  padding:30px 36px 32px;border-radius:28px;background:var(--ui-green);
+  box-shadow:inset 0 1px 0 #ffffff50,0 14px 35px -24px #426f235c;
+}
+.vi-color-heading {border-color:#ffffff64}
+.vi-color-heading h2 {color:#fff}
+.vi-pantone {font-size:32px;font-weight:650;gap:24px}
+.vi-pantone strong {font-weight:650}
+.vi-color-channels,.vi-color-notes {grid-template-columns:60% 40%}
+.vi-color-channels {padding-top:26px;gap:0}
+.vi-color-value {
+  min-height:54px;gap:16px;padding:9px 14px;border:0;border-radius:13px;
+  background:#fff;color:var(--ui-green);font-size:29px;font-weight:450;cursor:pointer;
+  box-shadow:0 2px 3px #416a1612,0 6px 14px -7px #365b2630;
+}
+.vi-color-value:focus-visible {outline-color:#fff!important;outline-offset:5px!important}
+.vi-color-notes {padding:0 36px 0}
+.vi-color-notes .vi-reference-note {font-size:16px;font-weight:500;display:flex;gap:8px;align-items:center;padding-top:29px}
+.vi-color-notes .vi-reference-note:before {height:38px;top:-18px;left:15px}
+.vi-font-family {font-size:29px;font-weight:450;letter-spacing:-1px}
+.vi-weight-display {margin-top:25px}
+.vi-weight-list li {padding-inline:4px}
+.vi-weight-list li+li {border-left-color:#e8ece5}
+.vi-weight-choice {padding:13px 2px 10px;border:0;border-radius:12px}
+.vi-weight-name {margin-top:20px;color:var(--ui-ink)}
+.vi-weight-value {color:var(--ui-ink);opacity:.64}
+.vi-weight-choice[aria-pressed="true"] {background:#eef5e5;box-shadow:inset 0 -3px 0 #71b32c}
+.vi-weight-choice[aria-pressed="true"] .vi-weight-value {opacity:1}
+.vi-common-weights .vi-reference-note {font-weight:500;font-size:clamp(13px,1.6cqw,18px)}
+.vi-weight-bracket {opacity:.85}
+.vi-safe-diagrams {padding-top:20px;gap:32px}
+.vi-safe-interactive {border-radius:20px;transition:background 220ms}
+.vi-safe-distance {fill:#78836c}
+.vi-safe-unit {fill:#78836c}
+.vi-safe-note {font-size:18px;font-weight:500;margin-top:10px}
+
+/* IP: borderless soft surfaces and a consistent control family. */
+.ip-section-heading {border-color:#deead1}
+.ip-identity {gap:32px}
+.ip-identity .ip-section-heading h1 {font-size:32px}
+.ip-view-choice {position:relative;border:0;background:#fafbf8;padding-bottom:11px;gap:8px}
+.ip-view-choice .ip-original {height:111px}
+.ip-view-choice[aria-pressed="true"] {background:#eff5e6;box-shadow:0 4px 14px -6px #3a56252b}
+.ip-view-choice span {font-weight:450}
+.ip-view-indicator {position:absolute;bottom:4px;width:12px;height:3px;border-radius:3px;background:var(--ui-green);opacity:0;transition:opacity 180ms}
+.ip-view-choice[aria-pressed="true"] .ip-view-indicator {opacity:1}
+.ip-orbit-surface {background:radial-gradient(ellipse at 50% 43%,#fff 23%,#f4f7ef 100%);border-radius:24px}
+.ip-hero-viewer {height:359px}
+.ip-model-badge {left:14px;bottom:14px;gap:7px;padding:8px 10px;border-radius:20px;background:#ffffffdb;box-shadow:0 2px 7px #29432408;color:#577335;font-size:11px}
+.ip-reset,.ip-action-arrow {
+  border:0;background:#fff;color:#486d26;
+  box-shadow:0 2px 4px #2138180a,0 7px 18px -5px #21381825;
+}
+.ip-reset {right:13px;bottom:13px}
+.ip-style-pair {padding:24px 8% 0;gap:56px}
+.ip-style-halo {background:radial-gradient(circle at 42% 30%,#f5f9ed,#e8f1dc)}
+.ip-style-preferred {box-shadow:0 5px 14px -5px #e66d0052,inset 0 1px 0 #ffffff65}
+.ip-style-pair figcaption {font-size:21px;font-weight:650;margin-top:12px}
+.ip-action-navigator {margin-top:22px}
+.ip-action-card {background:linear-gradient(145deg,#fff,#f8faf4);border:0;box-shadow:0 5px 18px #33452c0e}
+.ip-action-card[data-slot="0"] {box-shadow:0 3px 6px #1e34160b,0 17px 30px -8px #3047262b}
+.ip-action-thumbnails {gap:14px;padding-top:20px;margin-top:14px;border-top-color:#e7ece3}
+.ip-action-thumbnail {position:relative;background:#f8faf6;box-shadow:none;border:0;border-radius:16px}
+.ip-action-thumbnail[aria-pressed="true"] {background:#eef5e4;box-shadow:0 4px 14px -7px #36512130}
+
+/* The home keeps its quiet composition: glass, paper, air and the original cards. */
+.page-home .brand-folder-hero {background:radial-gradient(ellipse at 50% 61%,#f8fcff 0%,#fff 58%)}
+.page-home .header-shield-logo {filter:drop-shadow(0 5px 9px #2c4b1710)}
+.page-home .flow-wordmark {transition:opacity 180ms}
+.page-home .flow-wordmark:hover {opacity:.8}
+.welcome-backdrop {filter:drop-shadow(0 8px 12px #73b8d907)}
+.folder-front>svg {filter:drop-shadow(0 15px 15px #079de926)}
+.folder-glass {
+  background:linear-gradient(125deg,#effaff38,#bfe8ff12 44%,#87cfff26);
+  -webkit-backdrop-filter:blur(12px) saturate(.93);backdrop-filter:blur(12px) saturate(.93);
+}
+.folder-card-face {box-shadow:0 2px 4px #12334b0a,0 14px 26px -8px #12334b32,0 28px 50px -30px #12334b26}
+.is-expanded .folder-card.is-active .folder-card-face,.is-expanded .folder-card:focus-visible .folder-card-face {
+  box-shadow:0 2px 5px #12334b10,0 23px 40px -12px #12334b40;
+}
+.folder-shadow {background:radial-gradient(ellipse,#3498c137,transparent 68%);filter:blur(10px)}
+
+@media(hover:hover){
+  .logo-standard-preview:hover,.logo-company-preview:hover {background:#f0f5e9;box-shadow:0 6px 18px -10px #3c572530}
+  .vi-color-board:hover {transform:none;box-shadow:inset 0 1px 0 #ffffff50,0 14px 35px -24px #426f235c}
+  .vi-color-value:hover {transform:translateY(-2px);box-shadow:0 8px 18px -8px #365b2660}
+  .vi-font-panel:hover,.vi-logo-panel:hover {box-shadow:var(--ui-shadow)}
+  .vi-safe-interactive:hover {background:#fafcf7}
+  .ip-view-choice:hover {background:#f0f5e9;box-shadow:0 5px 15px -7px #344a2420}
+  .ip-reset:hover,.ip-action-arrow:hover {background:#f1f7e9;box-shadow:0 7px 18px -5px #21381830}
+}
+@media(max-width:1100px){
+  .showcase-app.is-inner .main {padding-inline:28px}
+  .showcase-app.is-inner .flow-header {padding-inline:28px}
+  .showcase-app.is-inner .flow-wordmark {gap:14px}
+  .showcase-app.is-inner .flow-wordmark small {font-size:16px;padding-left:14px}
+  .showcase-app .flow-nav>button {padding-inline:14px}
+  .logo-reference-panel,.vi-font-panel,.vi-logo-panel,.ip-reference-panel {padding:26px 28px}
+  .logo-reference-heading h1,.logo-reference-heading h2,.vi-section-heading h2,.ip-section-heading h1,.ip-section-heading h2 {font-size:31px}
+  .ip-identity .ip-section-heading h1 {font-size:27px}
+  .vi-color-board {padding-inline:28px}.vi-color-notes {padding-inline:28px}
+  .vi-pantone {font-size:27px;gap:20px}.vi-color-value {font-size:24px;gap:12px}
+  .vi-color-notes .vi-reference-note {font-size:13px;gap:6px}
+  .ip-identity {gap:24px}.ip-view-choice .ip-original {height:98px}
+}
+@media(max-width:900px){
+  .showcase-app.is-inner .flow-header {height:82px}
+  .showcase-app .flow-nav {padding:10px;background:#fffffff7;border-radius:23px;box-shadow:0 10px 40px #21381826;max-height:calc(100dvh - 100px);overflow-y:auto}
+  .showcase-app .flow-nav>button {justify-content:flex-start;min-height:48px;gap:13px;padding-inline:18px}
+  .showcase-app .flow-nav>button.current {background:#edf5e3;box-shadow:none}
+  .showcase-app .flow-nav.menu-open {gap:5px}
+  .showcase-app .flow-menu {min-width:44px;min-height:44px}
+  .showcase-app .flow-scrim {inset-block-start:82px;background:#182b311a;backdrop-filter:blur(3px)}
+}
+@media(max-width:800px){
+  .vi-color-value {font-size:20px;gap:8px;padding-inline:11px}
+  .vi-color-channels,.vi-color-notes {grid-template-columns:58% 42%}
+  .vi-color-notes .vi-reference-note {align-items:flex-start;line-height:1.7}
+  .vi-safe-diagrams {grid-template-columns:1fr;gap:8px}
+  .ip-hero-viewer {height:277px}.ip-view-choice .ip-original {height:80px}
+  .ip-style-pair {padding-inline:0;gap:24px}
+}
+@media(max-width:650px){
+  .showcase-app.is-inner .main {padding-inline:16px}
+  .showcase-app.is-inner .flow-header {padding-inline:20px;height:80px}
+  .showcase-app.is-inner .header-shield-logo {width:66px}
+  .showcase-app.is-inner .flow-wordmark small {font-size:16px}
+  .showcase-app .page-top {height:54px}
+  .showcase-app .breadcrumb {font-size:11px;gap:9px}
+  .logo-reference-gallery,.vi-gallery,.ip-gallery {gap:22px}
+  .logo-reference-panel,.vi-font-panel,.vi-logo-panel,.ip-reference-panel {padding:23px 20px;border-radius:24px}
+  .logo-reference-heading,.vi-section-heading,.ip-section-heading {gap:12px;padding-bottom:16px}
+  .logo-reference-heading h1,.logo-reference-heading h2,.vi-section-heading h2,.ip-section-heading h1,.ip-section-heading h2,.ip-identity .ip-section-heading h1 {font-size:25px;line-height:1.35;letter-spacing:-.035em}
+  .logo-standard-grid {gap:10px;padding-top:18px}
+  .logo-standard-preview {height:112px;border-radius:13px}
+  .logo-standard-preview .logo-reference-image {width:86%;max-height:94px}
+  .logo-priority-row {padding-inline:20px;gap:10px}.logo-priority-note {font-size:14px}
+  .logo-color-grid {gap:25px;padding-top:22px}.logo-color-figure figcaption {font-size:15px;margin-top:12px}
+  .logo-company-grid {gap:10px;padding-top:20px}.logo-company-preview {height:96px}
+  .vi-color-board {padding:25px 22px 27px;border-radius:24px}
+  .vi-color-heading {display:block}.vi-color-heading h2 {font-size:27px}.vi-pantone {font-size:25px;margin-top:14px}
+  .vi-color-channels {grid-template-columns:1fr;gap:14px;padding-top:22px}
+  .vi-color-value {font-size:clamp(17px,5vw,23px);gap:clamp(6px,2vw,11px);padding:11px 12px;min-height:50px}
+  .vi-color-notes {grid-template-columns:1fr;gap:10px;padding:16px 6px 0}
+  .vi-color-notes .vi-reference-note {padding-top:0;font-size:13px;gap:7px}
+  .vi-font-family {font-size:24px}
+  .vi-weight-list li {padding-inline:2px}.vi-weight-choice {padding:10px 0}
+  .vi-weight-name {margin-top:13px}
+  .vi-common-weights .vi-reference-note {font-size:14px;max-width:100%}
+  .vi-safe-diagrams {padding-top:14px;margin-inline:-10px}.vi-safe-note {font-size:15px}
+  .ip-view-choice .ip-original,.ip-view-choice.is-vertical .ip-original {height:78px}
+  .ip-view-choice {padding:9px 5px 12px}.ip-hero-viewer {height:276px}
+  .ip-identity {gap:18px}.ip-model-badge {left:10px;bottom:10px}.ip-reset {right:10px;bottom:10px}
+  .ip-style-pair {padding-top:22px;gap:12px}.ip-style-pair figcaption {font-size:17px;margin-top:10px}
+  .ip-action-thumbnails {gap:9px;padding-top:15px;margin-top:10px}.ip-action-thumbnail {background:#f8faf6}
+  .showcase-app .footer {padding:23px 4px 26px}.showcase-app .footer>span {font-size:10px}
+  .showcase-app .footer-shield-logo {width:56px}
+}
+/* Co-branding follows the same paper panels and restrained orange annotations. */
+.joint-logo-panel {min-width:0}
+.joint-logo-viewport {margin-top:25px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#dce4d7 transparent;padding:4px}
+.joint-logo-diagram {display:block;width:100%;padding:0;border:0;border-radius:16px;background:transparent;cursor:pointer;text-align:inherit}
+.joint-logo-diagram>svg {display:block;width:100%;height:auto;overflow:visible}
+.joint-safe-highlight {fill:#71b32c;opacity:0;transition:opacity 300ms var(--ui-ease)}
+.joint-logo-diagram[aria-pressed="true"] .joint-safe-highlight {opacity:.12}
+.joint-distance-label {fill:#92998c;font-size:21px;font-weight:400}
+.joint-measure-lines {stroke:var(--ui-orange)}
+.joint-measure-label {fill:var(--ui-orange);font-size:29px;font-weight:450}
+.joint-divider-label {font-size:24px}
+.joint-logo-note {margin:16px 0 0;text-align:center;font-size:18px;line-height:1.65;font-weight:500}
+.vi-color-value[data-copied="true"] {background:#eff7e6;box-shadow:inset 0 0 0 2px #ffffff80}
+@media(hover:hover){
+  .joint-logo-diagram:hover .joint-safe-highlight {opacity:.07}
+  .joint-logo-diagram[aria-pressed="true"]:hover .joint-safe-highlight {opacity:.14}
+}
+@media(max-width:650px){
+  .joint-logo-viewport {margin-top:18px;padding:4px 4px 10px}
+  .joint-logo-diagram {min-width:640px}
+  .joint-logo-note {font-size:15px;margin-top:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .showcase-app *, .showcase-app *::before, .showcase-app *::after {scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
