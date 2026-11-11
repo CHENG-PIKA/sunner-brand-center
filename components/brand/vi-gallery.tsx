@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import VIApplicationGuides from './vi-application-guides';
+import JointLogoGuide from './joint-logo-guide';
 
 const weights = [
   { name: 'Thin', value: 100 },
@@ -99,5 +100,6 @@ export default function VIGallery() {
       </div>
     </section>
     <VIApplicationGuides/>
+    <JointLogoGuide/>
   </div>;
 }

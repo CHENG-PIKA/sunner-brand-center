@@ -1,0 +1,255 @@
+/* The blue folder's frosted material, carried through the brand showroom. */
+.showcase-app {
+  --glass-surface: linear-gradient(128deg, #ffffffd9, #ffffff8c 58%, #f4fbffc4);
+  --glass-tile: linear-gradient(135deg, #ffffffb8, #f4fbff66);
+  --glass-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ffffffa3,
+    0 2px 5px #245e7c04, 0 16px 44px -22px #387e9e30;
+  --glass-tile-shadow: inset 0 1px 0 #ffffffeb, inset 0 -1px 0 #ffffff80,
+    0 5px 18px -10px #28718b29;
+  --glass-active: linear-gradient(135deg, #ffffffed, #dbf5ffb0);
+  --glass-blur: blur(22px) saturate(1.12);
+}
+
+.showcase-app.is-inner {
+  --glass-surface: linear-gradient(128deg, #ffffffdf, #ffffffa6 58%, #f9fcfdd1);
+  --glass-tile: linear-gradient(135deg, #ffffffc9, #fbfdfda8);
+  --glass-active: linear-gradient(135deg, #fffffff0, #f2f7f9d9);
+  --glass-hover: linear-gradient(135deg, #fffffff2, #fcfdfde6);
+  --glass-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ffffffa3,
+    0 2px 5px #51687903, 0 16px 44px -22px #51687922;
+  --glass-tile-shadow: inset 0 1px 0 #ffffffeb, inset 0 -1px 0 #ffffff80,
+    0 5px 18px -10px #51687921;
+  position: relative;
+  isolation: isolate;
+  background: #f7f9fa;
+}
+.showcase-app.is-inner::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 5% 21%, #d8ecf52e, transparent 38%),
+    radial-gradient(ellipse at 94% 56%, #dfecf62b, transparent 39%),
+    linear-gradient(135deg, #fbfcfd 12%, #f6f9fb 55%, #fcfdfd);
+}
+.showcase-app.is-inner::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  width: min(78vw, 1100px);
+  height: 120vh;
+  right: -36vw;
+  top: -18vh;
+  border-radius: 50%;
+  transform: rotate(34deg);
+  background: linear-gradient(115deg, #ffffff00 35%, #ffffff50 44%, #d9e9ef10 51%, #ffffff08 69%);
+  box-shadow: inset 15px 1px 24px #ffffff66, -8px 0 22px #b5cdd808;
+  filter: blur(1px);
+}
+
+/* Clear navigation above a translucent, uninterrupted canvas. */
+.showcase-app.is-inner .flow-header {
+  background: #fcfdfd99;
+  border-bottom: 0;
+  -webkit-backdrop-filter: blur(26px) saturate(1.16);
+  backdrop-filter: blur(26px) saturate(1.16);
+  box-shadow: inset 0 -1px 0 #ffffffc7, 0 7px 30px -25px #346d8b38;
+}
+.showcase-app.is-inner .header-shield-logo {filter: drop-shadow(0 4px 7px #38791a12)}
+.showcase-app.is-inner .flow-wordmark small {border-color: #99bdcd4d}
+.showcase-app .flow-nav {
+  background: linear-gradient(125deg, #ffffffb8, #ecf8ff75);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ffffff7a, 0 6px 20px -11px #286b863b;
+}
+.showcase-app.is-inner .flow-nav {
+  background: linear-gradient(125deg, #ffffffc9, #f8fafb99);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ffffff7a, 0 6px 20px -11px #51687924;
+}
+.showcase-app .flow-nav > button {
+  min-height: 44px;
+  transition: background 220ms, box-shadow 220ms, color 220ms;
+}
+.showcase-app .flow-nav > button.current,
+.showcase-app .flow-nav > button.current:hover {
+  color: #1a1a1a;
+  background: var(--glass-active);
+  box-shadow: inset 0 1px 0 #fff, 0 2px 5px #205f7b0b, 0 4px 13px -5px #2f8bb332;
+}
+.showcase-app .flow-nav > button:hover {background: #ffffff8c}
+.showcase-app .flow-menu {
+  background: var(--glass-tile);
+  box-shadow: var(--glass-tile-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+.showcase-app .breadcrumb > button {color: #425966}
+.showcase-app .breadcrumb > button:hover {color: #1a1a1a}
+.showcase-app .breadcrumb > svg {color: #688b9c;opacity: .65}
+.showcase-app .footer {
+  border-color: #ffffffc9;
+  box-shadow: 0 -1px 0 #80a8b512;
+}
+.showcase-app button:focus-visible,
+.showcase-app a:focus-visible {outline-color: #2d819f}
+
+/* Glass belongs to the interface; the brand plates remain colour-accurate. */
+.showcase-app :is(.logo-reference-panel, .vi-color-section, .vi-font-panel, .vi-logo-panel, .ip-reference-panel) {
+  position: relative;
+  background: var(--glass-surface);
+  border: 0;
+  border-radius: 30px;
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+.showcase-app :is(.logo-reference-heading, .vi-section-heading, .ip-section-heading) {
+  border-bottom-color: #a1bec52e;
+  box-shadow: 0 1px 0 #ffffff73;
+}
+.showcase-app :is(.logo-reference-heading h1, .logo-reference-heading h2, .vi-section-heading h2, .ip-section-heading h1, .ip-section-heading h2) {
+  font-weight: 650;
+}
+.showcase-app :is(.logo-standard-preview, .logo-company-preview, .ip-view-choice, .ip-action-thumbnail) {
+  background: var(--glass-tile);
+  border: 0;
+  box-shadow: var(--glass-tile-shadow);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.showcase-app :is(.logo-standard-preview, .logo-company-preview, .ip-view-choice, .ip-action-thumbnail)[aria-pressed="true"] {
+  background: var(--glass-active);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -2px 0 #71b32c60, 0 7px 22px -13px #2581a54d;
+}
+.showcase-app .logo-standard-preview {border-radius: 22px}
+.showcase-app .logo-company-preview {border-radius: 18px}
+.showcase-app .logo-color-preview {box-shadow: 0 4px 8px #2d596708, 0 10px 24px -13px #32647b40}
+.showcase-app .logo-color-preview[aria-pressed="true"] {box-shadow: 0 0 0 3px #fff, 0 0 0 5px #85b6c9, 0 12px 24px -10px #32647b40}
+
+.showcase-app .vi-color-section {padding: 12px 12px 22px}
+.showcase-app .vi-color-board {
+  border-radius: 23px;
+  background: #71b32c;
+  box-shadow: inset 0 1px 0 #ffffff8f, 0 8px 20px -15px #3b6a1e7a;
+}
+.showcase-app .vi-color-heading {border-color: #ffffff57;box-shadow: 0 1px 0 #ffffff10}
+.showcase-app .vi-color-value {
+  background: linear-gradient(125deg, #fffffff2, #ffffffdb);
+  border: 0;
+  border-radius: 14px;
+  font-weight: 450;
+  box-shadow: inset 0 1px 0 #fff, 0 4px 12px -6px #24541138;
+}
+.showcase-app .vi-color-value[data-copied="true"] {background: #fff;box-shadow: inset 0 0 0 2px #c6dfad, 0 4px 12px -6px #24541138}
+.showcase-app .vi-color-notes {padding-inline: 36px}
+.showcase-app .vi-weight-list li + li {border-left-color: #7b9fad24}
+.showcase-app .vi-weight-choice[aria-pressed="true"] {
+  background: var(--glass-active);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -2px 0 #71b32c;
+}
+.showcase-app .vi-safe-interactive {background: #ffffff26;border-radius: 18px}
+.showcase-app .vi-safe-interactive[aria-pressed="true"] {background: #ffffff5c}
+.showcase-app .joint-logo-viewport {scrollbar-color: #a6cad9 transparent}
+
+/* The character remains crisp against a soft blue glass stage. */
+.showcase-app :is(.ip-view-choice, .ip-action-thumbnail)[aria-pressed="true"] {
+  box-shadow: inset 0 1px 0 #fff, inset 0 -2px 0 #a6d7e8, 0 7px 22px -13px #2581a54d;
+}
+.showcase-app .ip-view-indicator {background: #7db9cf}
+.showcase-app .ip-style-hd {width: var(--style-size)}
+.showcase-app .ip-style-halo {left: 2%;right: auto;width: 96%}
+.showcase-app .ip-style-pair .ip-style-character {left: 10%;right: auto;width: 80%}
+.showcase-app .ip-style-preferred {left: -17%}
+.showcase-app .ip-style-pair .ip-style-illustration {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  width: 96%;
+  height: 96%;
+}
+.showcase-app .ip-style-pair figcaption {text-align: center}
+.showcase-app .ip-orbit-surface {
+  background: radial-gradient(ellipse at 50% 35%, #ffffffcf 8%, #f5f9fc99 66%, #e8f1f559);
+  box-shadow: inset 0 1px 0 #ffffffd9, inset 0 -1px 0 #ffffff91;
+  border-radius: 24px;
+}
+.showcase-app :is(.ip-reset, .ip-action-arrow, .ip-model-badge, .ip-model-retry) {
+  color: #2e6176;
+  background: linear-gradient(135deg, #ffffffed, #f5f9fbd9);
+  border: 0;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 #fff, 0 5px 16px -7px #32759540;
+}
+.showcase-app .ip-model-badge {color: #486675;box-shadow: inset 0 1px 0 #fff}
+.showcase-app .ip-style-halo {
+  background: radial-gradient(circle at 35% 25%, #fff 2%, #f5f9fcba 53%, #e4eff4a3);
+  box-shadow: inset 0 2px 2px #fff, inset -4px -6px 14px #b9d1dc1a, 0 12px 25px -18px #647e8b1a;
+}
+.showcase-app .ip-action-card {
+  overflow: hidden;
+  background: linear-gradient(125deg, #ffffffe8, #f9fbfcd1);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ffffffbd, 0 9px 24px -12px #296b8938;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.showcase-app .ip-action-card[data-slot="0"] {
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ffffffbd, 0 4px 8px #2369890a, 0 18px 32px -14px #28789847;
+}
+.showcase-app .ip-action-thumbnails {border-top-color: #9cc3d030;scrollbar-color: #a6cad9 transparent}
+
+/* A slow, low-contrast glint repeats the home card's surface reflection. */
+.showcase-app :is(.logo-standard-preview, .logo-company-preview, .ip-view-choice, .ip-action-thumbnail) {position: relative;overflow: hidden}
+.showcase-app :is(.logo-standard-preview, .logo-company-preview, .ip-view-choice, .ip-action-thumbnail, .ip-action-card)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  pointer-events: none;
+  background: linear-gradient(112deg, transparent 10%, #ffffff03 23%, #ffffff50 48%, #ffffff05 76%, transparent 90%);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  opacity: 0;
+  transform: translateX(-125%);
+}
+@media (hover: hover) and (pointer: fine) {
+  .showcase-app :is(.logo-standard-preview, .logo-company-preview, .ip-view-choice, .ip-action-thumbnail):hover {
+    background: var(--glass-hover, var(--glass-active));
+    box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 #ffffffb3, 0 8px 22px -13px #51687929;
+  }
+  .showcase-app :is(.logo-standard-preview, .logo-company-preview, .ip-view-choice, .ip-action-thumbnail, .ip-action-card):hover::after {
+    animation: card-surface-reflection 2720ms 90ms cubic-bezier(.22,.61,.36,1) both;
+  }
+  .showcase-app :is(.vi-font-panel, .vi-logo-panel):hover {box-shadow: var(--glass-shadow)}
+  .showcase-app .vi-safe-interactive:hover {background: #ffffff5c}
+  .showcase-app .vi-weight-choice:hover {background: #ffffff94}
+  .showcase-app .vi-color-board:hover {box-shadow: inset 0 1px 0 #ffffff8f, 0 8px 20px -15px #3b6a1e7a}
+  .showcase-app :is(.ip-reset, .ip-action-arrow):hover {background: #ffffffed;box-shadow: inset 0 1px 0 #fff, 0 6px 18px -7px #32759550}
+}
+@media (max-width: 900px) {
+  .showcase-app .flow-nav {background: #f7fcfff2;backdrop-filter: blur(24px);-webkit-backdrop-filter: blur(24px)}
+  .showcase-app .flow-scrim {background: #367e9621;backdrop-filter: blur(5px)}
+}
+@media (max-width: 650px) {
+  .showcase-app {--glass-blur: blur(14px) saturate(1.08)}
+  .showcase-app :is(.logo-reference-panel, .vi-color-section, .vi-font-panel, .vi-logo-panel, .ip-reference-panel) {border-radius: 24px}
+  .showcase-app .vi-color-section {padding: 8px 8px 18px}
+  .showcase-app .vi-color-board {border-radius: 18px;padding-inline: 18px}
+  .showcase-app .vi-color-notes {padding: 16px 12px 0}
+  .showcase-app .logo-standard-preview {border-radius: 16px}
+  .showcase-app.is-inner::after {right: -70vw;width: 100vw;opacity: .65}
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .showcase-app {--glass-surface: #f9fdff;--glass-tile: #f3faff;--glass-active: #e9f6fc}
+  .showcase-app.is-inner .flow-header {background: #f6fbff}
+  .showcase-app .flow-nav {background: #f3faff}
+  .showcase-app.is-inner {--glass-surface: #fcfdfd;--glass-tile: #fafcfd;--glass-active: #f2f7f9;--glass-hover: #fff}
+  .showcase-app.is-inner .flow-header, .showcase-app.is-inner .flow-nav {background: #fbfcfd}
+}
+@media (prefers-reduced-motion: reduce) {
+  .showcase-app :is(.logo-standard-preview, .logo-company-preview, .ip-view-choice, .ip-action-thumbnail, .ip-action-card)::after {animation: none!important}
+}
