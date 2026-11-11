@@ -15,23 +15,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v6
-      - name: Import initial website source
-        if: ${{ hashFiles('package.json') == '' }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release download v1.0.0 --repo "$GITHUB_REPOSITORY" --pattern sunner-brand-center-source.zip --dir "$RUNNER_TEMP"
-          echo "4db217be9d202b35804aa7774155c199d2fbbad8b4d13e05e89dca4005511836  $RUNNER_TEMP/sunner-brand-center-source.zip" | sha256sum --check
-          unzip -oq "$RUNNER_TEMP/sunner-brand-center-source.zip" -d .
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add app components lib public index.html main.tsx package.json package-lock.json postcss.config.mjs tsconfig.json vite.config.ts README.md .gitignore
-          git commit -m "Import complete Sunner brand center with fonts and 3D assets"
-          git push origin HEAD:main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
