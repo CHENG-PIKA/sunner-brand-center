@@ -1,0 +1,57 @@
+/* A bare blue-glass folder; the supplied artwork is the entire card face. */
+.header-shield-logo{display:block;width:76px;height:auto;aspect-ratio:1421 / 852;filter:drop-shadow(0 2px 8px #14211212)}
+.page-home{color:#1a1a1a;background:#fff}
+.page-home .flow-header{height:124px;color:#1a1a1a;background:transparent;pointer-events:none}
+.page-home .flow-wordmark{pointer-events:auto;gap:24px}
+.page-home .header-shield-logo{width:108px}
+.page-home .flow-wordmark small{font-size:28px;font-weight:650;letter-spacing:0;padding-left:24px;border-color:#d1d5d6;text-shadow:none;line-height:1.25}
+.home-sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.brand-folder-hero{height:100svh;min-height:740px;position:relative;isolation:isolate;overflow:hidden;background:#fff;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;padding:64px 0 100px}
+.welcome-backdrop{position:absolute;z-index:0;width:min(94vw,1680px);left:50%;top:52%;transform:translate(-50%,-50%) skewX(-12deg);pointer-events:none;user-select:none;opacity:.5}
+.welcome-backdrop img{display:block;width:100%;height:auto}
+.folder-stage{position:relative;z-index:1;width:1000px;height:650px;perspective:1300px;isolation:isolate}
+.folder-assembly{position:relative;width:100%;height:100%;animation:folder-arrive .9s cubic-bezier(.16,1,.3,1) both,folder-breathe 4.2s .9s ease-in-out infinite}
+.is-expanded .folder-assembly{animation-play-state:paused}
+.folder-back{position:absolute;left:280px;top:266px;width:440px;height:326px;filter:drop-shadow(0 15px 19px #1299d51a);transition:transform .52s cubic-bezier(.2,.8,.2,1);z-index:1}
+.folder-back svg{width:100%;height:100%}
+.folder-front{position:absolute;left:274px;top:346px;width:452px;height:278px;padding:0;z-index:10;transform-origin:50% 100%;transition:transform .52s cubic-bezier(.2,.8,.2,1);background:none!important;border-radius:36px;cursor:pointer}
+.folder-front>svg{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 18px 15px #079de91c);pointer-events:none}
+.folder-glass{position:absolute;inset:0;background:linear-gradient(130deg,#f3fcff32,#c8efff1a 50%,#9ce2ff26);-webkit-backdrop-filter:blur(17px) saturate(.88);backdrop-filter:blur(17px) saturate(.88);clip-path:path('M34 57 H202 C238 57 242 5 278 5 H416 Q446 5 446 36 L439 243 Q438 271 407 271 H40 Q12 271 11 243 L6 88 Q5 57 34 57Z');pointer-events:none}
+.is-expanded .folder-front{transform:translateY(25px) rotateX(-14deg)}
+.is-expanded .folder-back{transform:scale(.98)}
+.folder-card-stack{position:absolute;inset:0;pointer-events:none}
+.folder-card{position:absolute;top:0;left:50%;display:block;width:304px;height:340px;padding:24px 12px 18px;pointer-events:auto;transform-origin:50% 100%;transform:translate(calc(-50% + var(--peek-x)),var(--peek-y)) rotate(var(--peek-r)) scale(.76);transition:transform .52s cubic-bezier(.2,.8,.2,1) var(--card-delay);z-index:var(--card-z);outline-offset:1px;border-radius:25px;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.folder-card-face{display:block;width:280px;aspect-ratio:1922 / 2048;background:#fff;border-radius:18px;box-shadow:0 13px 30px #14384d1c,0 1px 4px #1e5c780c;overflow:hidden;transition:transform .52s cubic-bezier(.2,.8,.2,1),box-shadow .42s;pointer-events:none;will-change:transform}
+.folder-card-face img{width:100%;height:100%;object-fit:contain;pointer-events:none}
+.card-logo{--peek-x:-73px;--peek-y:141px;--peek-r:-9deg;--open-x:-230px;--open-y:75px;--open-r:-13deg;--card-z:3}
+.card-vi{--peek-x:-23px;--peek-y:122px;--peek-r:-3deg;--open-x:-76px;--open-y:24px;--open-r:-4deg;--card-z:5}
+.card-ip{--peek-x:27px;--peek-y:131px;--peek-r:3deg;--open-x:78px;--open-y:27px;--open-r:4deg;--card-z:6}
+.card-pr{--peek-x:75px;--peek-y:153px;--peek-r:9deg;--open-x:232px;--open-y:78px;--open-r:13deg;--card-z:4}
+.card-vi .folder-card-face{background:#71b32c}
+.is-expanded .folder-card{transform:translate(calc(-50% + var(--open-x)),var(--open-y)) rotate(var(--open-r)) scale(1)}
+.is-expanded .folder-card.is-active,.is-expanded .folder-card:focus-visible{z-index:20;transition-delay:0s}
+.is-expanded .folder-card.is-active .folder-card-face,.is-expanded .folder-card:focus-visible .folder-card-face{transform:translateY(-13px) scale(1.045);box-shadow:0 24px 42px #15364926,0 2px 6px #173a4d0d}
+.folder-front:focus-visible,.folder-card:focus-visible{outline:2px solid #147fae}
+.folder-shadow{position:absolute;left:calc(50% - 170px);bottom:-25px;width:340px;height:32px;background:radial-gradient(ellipse,#2aa5cf50,transparent 70%);filter:blur(12px);z-index:-1;transition:transform .52s,opacity .52s;pointer-events:none}
+.is-expanded .folder-shadow{transform:scaleX(1.06);opacity:.85}
+@keyframes folder-arrive{from{opacity:0;transform:translateY(22px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes folder-breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
+@media(min-width:1700px){.folder-stage{transform:scale(1.12)}.brand-folder-hero{min-height:820px}}
+@media(max-height:820px) and (min-width:801px){.brand-folder-hero{min-height:610px;padding-top:50px;padding-bottom:40px}.folder-stage{transform:scale(.83);margin-top:-40px}}
+@media(max-width:1000px){.folder-stage{transform:scale(.85)}.brand-folder-hero{min-height:640px}}
+@media(max-width:800px){.folder-stage{transform:scale(.7)}.brand-folder-hero{min-height:570px;padding-top:50px;padding-bottom:70px}.welcome-backdrop{width:112vw;top:51%}}
+@media(max-width:600px){.header-shield-logo{width:66px}.page-home .flow-header{height:108px}.page-home .header-shield-logo{width:82px}.page-home .flow-wordmark{gap:16px}.page-home .flow-wordmark small{display:block;font-size:20px;padding-left:16px}.folder-stage{transform:scale(.55)}.brand-folder-hero{min-height:490px;padding-top:25px;padding-bottom:65px}.welcome-backdrop{width:126vw;top:51%}}
+@media(max-width:440px){.folder-stage{transform:scale(.4)}.brand-folder-hero{min-height:460px}.is-expanded .folder-card.is-active .folder-card-face{transform:translateY(-20px) scale(1.08)}}
+@media(max-width:370px){.folder-stage{transform:scale(.34)}.brand-folder-hero{min-height:430px}}
+@media(prefers-reduced-motion:reduce){.folder-assembly{animation:none}.folder-front,.folder-back,.folder-card,.folder-card-face,.folder-shadow{transition:none}}
+
+/* Shared brand signatures in every page header and footer. */
+.footer-shield-logo{display:block;width:76px;height:auto;aspect-ratio:1421 / 852}
+.showcase-app .footer{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+.showcase-app .footer .footer-brand{justify-self:start;min-height:44px;display:flex;align-items:center}
+.showcase-app .footer>span{margin-left:0;justify-self:center;grid-column:2;font-size:10px}
+@media(max-width:650px){
+ .footer-shield-logo{width:62px}
+ .showcase-app .footer{grid-template-columns:auto 1fr;gap:24px}
+ .showcase-app .footer>span{justify-self:end;font-size:9px}
+}
