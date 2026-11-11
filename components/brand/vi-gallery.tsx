@@ -19,6 +19,21 @@ const weights = [
 export default function VIGallery() {
   const gallery = useRef<HTMLDivElement>(null);
   const [selectedWeight, setSelectedWeight] = useState<number | null>(null);
+  const [copied, setCopied] = useState<string | null>(null);
+  const [copyStatus, setCopyStatus] = useState('');
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (copyTimer.current) clearTimeout(copyTimer.current); }, []);
+  const copyColor = async (channel: 'CMYK' | 'RGB') => {
+    try {
+      await navigator.clipboard.writeText(channel === 'CMYK' ? 'C:60 M:6 Y:100 K:0' : 'R:113 G:179 B:44');
+      setCopied(channel);
+      setCopyStatus(`${channel} 色值已复制`);
+      if (copyTimer.current) clearTimeout(copyTimer.current);
+      copyTimer.current = setTimeout(() => {setCopied(null);setCopyStatus('');}, 1800);
+    } catch {
+      setCopyStatus('复制未成功，请手动复制色值');
+    }
+  };
 
   useEffect(() => {
     const sections = gallery.current?.querySelectorAll<HTMLElement>(':scope > section');
@@ -54,14 +69,15 @@ export default function VIGallery() {
           <p className="vi-pantone"><span>PANTONE</span><strong>368C</strong></p>
         </header>
         <div className="vi-color-channels">
-          <div className="vi-color-value" aria-label="CMYK 色值" aria-describedby="vi-print-note"><span>C:60</span><span>M:6</span><span>Y:100</span><span>K:0</span></div>
-          <div className="vi-color-value" aria-label="RGB 色值" aria-describedby="vi-digital-note"><span>R:113</span><span>G179</span><span>B:44</span></div>
+          <button type="button" className="vi-color-value" data-copied={copied==='CMYK'} aria-label="复制 CMYK 色值" title={copied==='CMYK'?'已复制':'复制 CMYK 色值'} aria-describedby="vi-print-note" onClick={()=>copyColor('CMYK')}><span>C:60</span><span>M:6</span><span>Y:100</span><span>K:0</span></button>
+          <button type="button" className="vi-color-value" data-copied={copied==='RGB'} aria-label="复制 RGB 色值" title={copied==='RGB'?'已复制':'复制 RGB 色值'} aria-describedby="vi-digital-note" onClick={()=>copyColor('RGB')}><span>R:113</span><span>G179</span><span>B:44</span></button>
         </div>
       </div>
       <div className="vi-color-notes">
         <p className="vi-reference-note" id="vi-print-note">印刷（需要供应商制作的）请按这个色值</p>
         <p className="vi-reference-note" id="vi-digital-note">线上（手机、电脑看的）请按这个色值</p>
       </div>
+      <span className="sr-only" role="status">{copyStatus}</span>
     </section>
     <section className="vi-font-panel" aria-labelledby="vi-font-title">
       <header className="vi-section-heading">

@@ -1,0 +1,42 @@
+/* One broad, soft surface reflection on hover; retain the original flat edges. */
+.page-home .folder-card-face {
+  position:relative;
+}
+.page-home .folder-card-face::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  /* Only the stationary card clips the reflection to its rounded outline. */
+  border-radius:0;
+  pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+  background:linear-gradient(112deg,
+    transparent 8%,
+    rgba(255,255,255,.04) 18%,
+    rgba(255,255,255,.28) 32%,
+    rgba(255,255,255,.72) 44%,
+    rgba(255,255,255,.72) 56%,
+    rgba(255,255,255,.28) 70%,
+    rgba(255,255,255,.04) 83%,
+    transparent 92%);
+  transform:translateX(-125%);
+  opacity:0;
+}
+@media(hover:hover) and (pointer:fine){
+  .page-home .folder-card:hover .folder-card-face::after {
+    animation:card-surface-reflection 2720ms 90ms cubic-bezier(.22,.61,.36,1) both;
+  }
+}
+.page-home .folder-card:focus-visible .folder-card-face::after {
+  animation:card-surface-reflection 2720ms 90ms cubic-bezier(.22,.61,.36,1) both;
+}
+@keyframes card-surface-reflection {
+  0% {transform:translateX(-125%);opacity:0}
+  15% {opacity:.36}
+  75% {opacity:.36}
+  100% {transform:translateX(125%);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .page-home .folder-card .folder-card-face::after {animation:none}
+}

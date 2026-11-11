@@ -7,4 +7,6 @@ import './app/flow.css';
 import './app/showcase.css';
 import './app/ip.css';
 import './app/home.css';
+import './app/refinement.css';
+import './app/home-card-sheen.css';
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);

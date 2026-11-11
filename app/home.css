@@ -10,8 +10,8 @@
 .welcome-backdrop{position:absolute;z-index:0;width:min(94vw,1680px);left:50%;top:52%;transform:translate(-50%,-50%) skewX(-12deg);pointer-events:none;user-select:none;opacity:.5}
 .welcome-backdrop img{display:block;width:100%;height:auto}
 .folder-stage{position:relative;z-index:1;width:1000px;height:650px;perspective:1300px;isolation:isolate}
-.folder-assembly{position:relative;width:100%;height:100%;animation:folder-arrive .9s cubic-bezier(.16,1,.3,1) both,folder-breathe 4.2s .9s ease-in-out infinite}
-.is-expanded .folder-assembly{animation-play-state:paused}
+.folder-assembly{position:relative;width:100%;height:100%;animation:folder-arrive .9s cubic-bezier(.16,1,.3,1) backwards,folder-breathe 4.2s .9s ease-in-out infinite}
+.is-expanded .folder-assembly{animation-play-state:running,paused}
 .folder-back{position:absolute;left:280px;top:266px;width:440px;height:326px;filter:drop-shadow(0 15px 19px #1299d51a);transition:transform .52s cubic-bezier(.2,.8,.2,1);z-index:1}
 .folder-back svg{width:100%;height:100%}
 .folder-front{position:absolute;left:274px;top:346px;width:452px;height:278px;padding:0;z-index:10;transform-origin:50% 100%;transition:transform .52s cubic-bezier(.2,.8,.2,1);background:none!important;border-radius:36px;cursor:pointer}

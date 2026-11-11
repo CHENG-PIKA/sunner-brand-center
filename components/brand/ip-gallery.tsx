@@ -55,7 +55,7 @@ function CharacterViewer(){
   <div className="ip-identity-library">
    <header className="ip-section-heading"><h1 id="ip-identity-title">圣农标准IP-圣小农</h1></header>
    <div className="ip-views" role="group" aria-label="圣小农六视图">
-    {views.map((item,index)=><button type="button" key={item.name} className={'ip-view-choice '+(index>3?'is-vertical':'')} aria-label={'查看'+item.name} aria-pressed={selected===index} onClick={()=>selectView(index)}><HDView index={index}/><span>{item.name}</span></button>)}
+    {views.map((item,index)=><button type="button" key={item.name} className={'ip-view-choice '+(index>3?'is-vertical':'')} aria-label={'查看'+item.name} aria-pressed={selected===index} onClick={()=>selectView(index)}><HDView index={index}/><span>{item.name}</span><i className="ip-view-indicator" aria-hidden="true"/></button>)}
    </div>
   </div>
   <IPModelViewer pose={pose} onRotate={()=>setSelected(null)} onReset={()=>selectView(0)}/>
@@ -135,7 +135,7 @@ export default function IPGallery(){
     <section className="ip-reference-panel ip-styles" aria-labelledby="ip-styles-title">
       <header className="ip-section-heading"><h2 id="ip-styles-title">圣小农风格使用</h2></header>
       <div className="ip-style-pair">
-        <figure><div className="ip-style-hd"><span className="ip-style-halo" aria-hidden="true"/><HDView className="ip-style-character"/><span className="ip-style-preferred"><Check aria-hidden="true" strokeWidth={4}/><span>优先使用</span></span></div><figcaption>立体风格</figcaption></figure>
+        <figure><div className="ip-style-hd"><span className="ip-style-halo" aria-hidden="true"/><HDView className="ip-style-character"/><span className="ip-style-preferred"><Check aria-hidden="true" strokeWidth={2.5}/><span>优先使用</span></span></div><figcaption>立体风格</figcaption></figure>
         <figure><OriginalIP crop="667 729 359 355" label="圣小农插画风格"/><figcaption>插画风格</figcaption></figure>
       </div>
     </section>
