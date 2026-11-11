@@ -29,11 +29,11 @@ function HDAction({action}:{action:typeof actions[number]}){
   return <img className="ip-original ip-hd-image" src={'./images/ip/'+action.file+'.png'} alt={'圣小农'+action.name} width={action.width} height={action.height} decoding="async" draggable={false}/>;
 }
 
-function OriginalIP({crop,label,className=''}:{crop:string;label:string;className?:string}){
+function OriginalIP({crop,label,className='',circular=false}:{crop:string;label:string;className?:string;circular?:boolean}){
   const clip=useId();
   const [x,y,width,height]=crop.split(' ').map(Number);
   return <svg className={'ip-original '+className} viewBox={crop} role="img" aria-label={label} preserveAspectRatio="xMidYMid meet">
-    <defs><clipPath id={clip}><rect x={x} y={y} width={width} height={height}/></clipPath></defs>
+    <defs><clipPath id={clip}>{circular?<circle cx={x+width/2} cy={y+height/2} r={Math.min(width,height)/2-1}/>:<rect x={x} y={y} width={width} height={height}/>}</clipPath></defs>
     <image href={reference} width="1251" height="2048" clipPath={`url(#${clip})`}/>
   </svg>;
 }
@@ -136,7 +136,7 @@ export default function IPGallery(){
       <header className="ip-section-heading"><h2 id="ip-styles-title">圣小农风格使用</h2></header>
       <div className="ip-style-pair">
         <figure><div className="ip-style-hd"><span className="ip-style-halo" aria-hidden="true"/><HDView className="ip-style-character"/><span className="ip-style-preferred"><Check aria-hidden="true" strokeWidth={2.5}/><span>优先使用</span></span></div><figcaption>立体风格</figcaption></figure>
-        <figure><OriginalIP crop="667 729 359 355" label="圣小农插画风格"/><figcaption>插画风格</figcaption></figure>
+        <figure><div className="ip-style-hd"><OriginalIP crop="680 740 337 337" label="圣小农插画风格" className="ip-style-illustration" circular/></div><figcaption>插画风格</figcaption></figure>
       </div>
     </section>
     <ActionCarousel/>
