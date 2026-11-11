@@ -2,6 +2,7 @@
 
 import {useEffect, useRef, useState} from 'react';
 import type {LogoScene} from '@/lib/showcase';
+import JointLogoGuide from './joint-logo-guide';
 
 export function LogoArtwork({scene, guides=false}:{scene:LogoScene;guides?:boolean}){
   return <div className={'logo-artwork scene-'+scene.backdrop+(guides?' with-guides':'')}>
@@ -93,5 +94,6 @@ export default function LogoGallery(){
         </div>)}
       </div>
     </section>
+    <JointLogoGuide/>
   </div>;
 }
